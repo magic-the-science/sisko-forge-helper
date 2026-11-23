@@ -1,5 +1,4 @@
 # sisko-forge-helper
 
-Extra GitHub Actions runners for [sisko-forge-tests](https://github.com/michaelsabramson/sisko-forge-tests).
-Each test run there starts `helper.yml` here, which plays part of the test's games on this organization's runners.
-Needs the secret `MAIN_TOKEN` (fine-grained token, Contents read/write on sisko-forge-tests).
+Placeholder. Nothing runs here. The deck lab ([sisko-forge-tests](https://github.com/michaelsabramson/sisko-forge-tests))
+will be transferred into this organization; this repo can be deleted then (see MOVE.md there).
