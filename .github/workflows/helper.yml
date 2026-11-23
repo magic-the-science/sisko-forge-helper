@@ -1,0 +1,24 @@
+name: helper
+run-name: helper for ${{ inputs.run }}
+# Extra runners for michaelsabramson/sisko-forge-tests: started by each of its test runs. All the logic lives in that
+# repo (.github/workflows/helper-shards.yml); this file only lends this organization's runners.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { required: true }
+      run: { required: true }
+      sha: { required: true }
+      first: { required: true }
+permissions:
+  contents: read
+  actions: write
+jobs:
+  play:
+    uses: michaelsabramson/sisko-forge-tests/.github/workflows/helper-shards.yml@main
+    with:
+      repo: ${{ inputs.repo }}
+      run: ${{ inputs.run }}
+      sha: ${{ inputs.sha }}
+      first: ${{ fromJson(inputs.first) }}
+    secrets:
+      MAIN_TOKEN: ${{ secrets.MAIN_TOKEN }}
